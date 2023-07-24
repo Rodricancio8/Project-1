@@ -13,22 +13,38 @@
         <h1>!VEGAN GAME</h1>
     </div>
     <main>
-        <div id="game-container"></div>
-        <div id="game">
-            <img src="./images/messi asado.png" width="400" height="350" alt="" class="logo main-img" />
-
+        <div class="imagen-fondo">
+        <div id="game-intro">
+            <img src="./images/messi asado.png" width="500" height="350" alt="messi asando" class="main-img" />
+            <br>
+            <br>
+            <br>
             <button id="start-button">START</button>
             <p>LET'S COOK</p>
 
             <img src="./images/arrows.png" alt="" class="arrows-img" />
 
-            <script src="src/script.js"></script>
-            <script src="src/game.js"></script>
-            <script src="src/Player.js"></script>
+        </div>
 
+        <div id="game-screen">
+            <div id="player"></div>
 
-
+        </div>
+        
+        <div id="game-over">
+            <img src="./images/logo.png" alt="" class="logo-img" />
+            <h1>Game Over</h1>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <button id="restart-button">Restart</button>
+          </div>
+        </div>
     </main>
+    <script type="text/javascript" src="/Player.js"></script>
+    <script type="text/javascript" src="/game.js"></script>
+    <script type="text/javascript" src="/script.js"></script>
 </body>
 
 </html>
