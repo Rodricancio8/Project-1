@@ -1,16 +1,8 @@
 class Game {
     constructor() {
         this.gameScreen = document.getElementById("game-screen")
-        this.player = new Player(
-            this.gameScreen,
-            200,
-            500,
-            100,
-            150,
-        )
 
-
-        this.startScreen = document.getElementById("game-intro")
+        this.gameIntro = document.getElementById("game-intro")
         this.width = "500px"
         this.height = "700px"
         this.obstacles = []
@@ -24,12 +16,30 @@ class Game {
         // this.gameScreen.style.height = this.height
 
 
-        this.startScreen.style.display= "none"
+        this.gameIntro.style.display= "none"
 
 
         this.gameScreen.style.display = "block"
 
 
         this.gameLoop()
+    }
+
+    gameLoop() {
+    
+        if (this.gameIsOver) {
+            console.log("The game is over")
+            return
+        }
+
+        this.update()
+
+        window.requestAnimationFrame(() => this.gameLoop())
+
+    }
+
+
+    update() {
+
     }
 }
