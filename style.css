@@ -31,7 +31,26 @@ body {
   border: solid;
   text-align: center;
 
+}
 
+.vegetables{
+  position: absolute;
+  top: 0;
+  left: 50vw;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+
+
+}
+
+.meat {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 50px;
+  height: 50px;
+  background-color: blue;
 }
 
 body button {
@@ -49,26 +68,40 @@ body button {
 
 #game-screen {
   display: none;
-  align-content: center;
-  padding: 20px 0px;
+  margin: auto;
+  text-align:unset;
+  position: relative;
   /* overflow: hidden; */
   position: relative;
   background-image: url(images/fondo1.webp);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 80vh;
-  width: 80vw;
+  height: 400px;
+  width: 1200px;
 }
 
 #game-over{
+
+  /* padding: 10px 20px;
+  font-size: 18px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #fff;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; */
   position: absolute;
-  top: 300px;
-  right: -200px;
-  background-color: red;
+  text-align: center;
+  top: 750px;
+  right: 265px;
+  background-color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  font-size: 10px;
+  font-size: 14px;
   font-weight: bold;
 
 }
@@ -88,11 +121,11 @@ body button {
 
 #restart-button{
   position: absolute;
-  padding: 10px 20px;
+  padding: 4px 7px;
   border-radius: 5px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
-  top: 20px;
+  top: 100px;
   right: -200px;
+  font-weight: 5px;
 
 }
 
@@ -106,6 +139,9 @@ body button {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: background-color 0.2s;
+}
+.restart-button:hover {
+  background-color: #45a049;
 }
 
 .score-button:hover {
