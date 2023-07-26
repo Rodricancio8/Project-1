@@ -62,14 +62,14 @@ body button {
   margin: auto;
   text-align:unset;
   position: relative;
-  /* overflow: hidden; */
   position: relative;
   background-image: url(images/fondo1.webp);
   background-size: cover;
   background-repeat: no-repeat;
   height: 800px;
   width: 1200px;
-  border: solid 20px, black
+  border: solid 20px, black;
+  /* overflow: hidden; */
 }
 
 #game-over{
@@ -132,6 +132,7 @@ body button {
 .score-button {
   position: absolute;
   top: -350px;
+  width: 200px;
   right: -200px;
   background-color: #4CAF50;
   padding: 3px 29px;
@@ -145,9 +146,9 @@ body button {
   background-color: #45a049;
 }
 
-.score-text {
+#score-text {
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   position: absolute;
   top: 500px;

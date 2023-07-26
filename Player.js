@@ -14,19 +14,19 @@ class Player {
   }
 
   // New method to handle player movement within game boundaries
-  playerMove(direction) {
+  playerMove(key) {
     // Set player's movement speed
     const moveAmount = 50;
     const gameWidth = this.gameScreen.offsetWidth;
     const playerWidth = this.playerElement.offsetWidth;
 
-    if (direction === "left") {
+    if (key === "left") {
       this.x -= moveAmount;
       // Ensure the player's x coordinate doesn't go below 0
       if (this.x < 0) {
         this.x = 0;
       }
-    } else if (direction === "right") {
+    } else if (key === "right") {
       this.x += moveAmount;
       // Ensure the player's x coordinate doesn't go beyond the game screen's width minus the player's width
       if (this.x > gameWidth - playerWidth) {
@@ -45,4 +45,6 @@ class Player {
     this.playerElement.style.left = `${this.x}px`;
   }
 
+
 }
+

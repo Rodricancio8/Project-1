@@ -14,8 +14,8 @@ class Obstacles {
         this.createScore()
         this.animateEnemies()
         this.animateScore()
-        let obstacle = null
-        let score = null
+        // let obstacle = []
+        // let score = null
     }
 
 
@@ -24,6 +24,7 @@ class Obstacles {
 
         this.obstacle = document.createElement("div")
         this.obstacle.className = "vegetables"
+        this.gameScreen.appendChild(this.obstacle)
 
 
         let randomNumber = Math.floor(Math.random() * this.gameScreen.offsetWidth)
@@ -59,6 +60,7 @@ class Obstacles {
         let position = this.obstacle.offsetTop + 4;
         this.obstacle.style.top = position + "px";
 
+
         // console.log(this.obstacle.style.top)
 
         window.requestAnimationFrame(() => {
@@ -66,41 +68,20 @@ class Obstacles {
         })
     }
 
-    animateScore(){
+    animateScore() {
 
         let position = this.score.offsetTop + 7;
         this.score.style.top = position + "px";
         // console.log(this.score.style.top)
-        
+
         window.requestAnimationFrame(() => {
             this.animateScore()
 
         })
     }
 
-    didCollide(obstacle) {
-        const playerHitBox = this.element.getBoundingClientRect();
-        const obstacleHitBox = obstacle.element.getBoundingClientRect();
 
-        if (
-            playerHitBox.left < obstacleHitBox.right &&
-            playerHitBox.right > obstacleHitBox.left &&
-            playerHitBox.top < obstacleHitBox.bottom &&
-            playerHitBox.bottom > obstacleHitBox.top
-        ) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }
-
-
-
-
-
-
-
 
 
 // }
