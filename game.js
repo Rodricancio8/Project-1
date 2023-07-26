@@ -6,8 +6,8 @@ class Game {
         this.gameEndScreen = document.getElementById("game-over");
 
         // Set the initial dimensions of the game screen
-        this.width = "500px";
-        this.height = "700px";
+        this.width = "500px"; //1200
+        this.height = "700px"; //800
 
         // Initialize game variables
         this.obstacles = [];
@@ -35,7 +35,16 @@ class Game {
 
         // Continue the game loop by requesting the next animation frame
         window.requestAnimationFrame(() => this.gameLoop());
+        document.addEventListener("keydown",(event) => {
+         
+             if (!this.gameIsOver) {
+                 playerMove(event.key)
+             }
+             });
     }
+
+
+
 
     update() {
         // CONTENIDO AQUI

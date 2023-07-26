@@ -33,10 +33,12 @@ window.onload = function () {
     }
   }
 
-  setInterval(()=>{
-    new Obstacles(gameScreen,game)
+  setInterval(() => {
+    new Obstacles(gameScreen, game)
     console.log(game)
-  }, 1000)
+  }, 4000)
+  
+
 
   // Add a keydown event listener to the window to capture keyboard input
   window.addEventListener("keydown", (event) => {

@@ -44,4 +44,5 @@ class Player {
     // Set the left style property of the player element to move it horizontally
     this.playerElement.style.left = `${this.x}px`;
   }
+
 }

@@ -9,14 +9,6 @@ body {
   text-align: center;
 }
 
-/* .imagen-fondo {
-    background-image: url("/images/parrilla2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 1000px;
-    width: 1000px
-} */
-
 #game-intro {
   padding: 100px 0px;
   background-color: black;
@@ -40,11 +32,10 @@ body {
   width: 50px;
   height: 50px;
   background-color: red;
-
-
 }
 
-.meat {
+
+.meat{
   position: absolute;
   top:0;
   left:0;
@@ -76,8 +67,9 @@ body button {
   background-image: url(images/fondo1.webp);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 400px;
+  height: 800px;
   width: 1200px;
+  border: solid 20px, black
 }
 
 #game-over{
@@ -117,31 +109,36 @@ body button {
   bottom: 0;
   background-size: contain;
   background-repeat: no-repeat;
+  animation-name: fadeInOut, moveLeft300px, bounce;
+  
 }
 
-#restart-button{
+.restart-button{
   position: absolute;
-  padding: 4px 7px;
-  border-radius: 5px;
-  top: 100px;
-  right: -200px;
-  font-weight: 5px;
-
-}
-
-.score-button {
-  position: absolute;
-  top: 20px;
-  right: -200px;
+  top: 500px;
+  right: 100px;
   background-color: #4CAF50;
   padding: 10px 20px;
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
   transition: background-color 0.2s;
 }
-.restart-button:hover {
-  background-color: #45a049;
+
+
+.score-button {
+  position: absolute;
+  top: -350px;
+  right: -200px;
+  background-color: #4CAF50;
+  padding: 3px 29px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .score-button:hover {
@@ -152,4 +149,13 @@ body button {
   color: white;
   font-size: 18px;
   font-weight: bold;
+  position: absolute;
+  top: 500px;
+  right: 50px;
+  background-color: #4CAF50;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
