@@ -4,6 +4,10 @@ class Game {
         this.gameScreen = document.getElementById("game-screen");
         this.gameIntro = document.getElementById("game-intro");
         this.gameEndScreen = document.getElementById("game-over");
+        this.messiWin = document.getElementById("win-messi")
+        // this.display = document.getElementById("imagen-fondo")
+        this.buttonScore = document.getElementById("score-button")
+
 
         // Set the initial dimensions of the game screen
         this.width = "500px"; //1200
@@ -18,8 +22,10 @@ class Game {
 
     start() {
         // Hide the game intro and display the game screen
+        this.messiWin.style.display = "none";
         this.gameIntro.style.display = "none";
         this.gameScreen.style.display = "block";
+        this.buttonScore.style.display = "block";
         // this.gameScreen.style.width = this.width
         // this.gameScreen.style.height = this.height
 
@@ -32,6 +38,7 @@ class Game {
             console.log("The game is over");
             return;
         }
+        this.finishWin()
         this.finish()
         this.desappear()
         this.collissionDetectionForSquares()
@@ -56,66 +63,64 @@ class Game {
     collissionDetectionForSquares() {
         const newPlayer = document.getElementById("player");
         this.obstacles.forEach(obstacle => {
-            
+
             // In this case we check the collission with the reward that is already on the page
-            
-            
+
+
             const playerPosition = newPlayer.getBoundingClientRect();
             const obstaclePosition = obstacle.getBoundingClientRect();
-            
-            
+
+
             // COLLISSION DETECTION STANDARD ALGORITHM (SQUARE VS SQUARE)
             if (
                 playerPosition.x < obstaclePosition.x + obstaclePosition.width &&
                 playerPosition.x + playerPosition.width > obstaclePosition.x &&
                 playerPosition.y < obstaclePosition.y + obstaclePosition.height &&
                 playerPosition.y + playerPosition.height > obstaclePosition.y
-                ) {
-                    console.log('COLLISSION DETECTED');
-                    
-                    if (obstacle.className === "vegetables") {
-                        this.score -= 1
-                        this.scoreElement.textContent = `SCORE: ${this.score}`
-                    }
-                    
-                    else if (obstacle.className === "meat") {
-                        this.score += 1
-                        this.scoreElement.textContent = `SCORE: ${this.score}`
-                        console.log(this.score)
-                    }
-            
-                    
+            ) {
+                console.log('COLLISSION DETECTED');
+
+                if (obstacle.className === "vegetables") {
+                    this.score -= 1
+                    this.scoreElement.textContent = `SCORE: ${this.score}`
+                }
+
+                else if (obstacle.className === "meat") {
+                    this.score += 1
+                    this.scoreElement.textContent = `SCORE: ${this.score}`
+                    console.log(this.score)
+                }
+
+
                 obstacle.remove()
             }
         });
 
-
     }
 
 
 
+    finish() {
 
-
-
-
-    finish(){
-       
-        if(this.score < 0){
+        if (this.score < 0) {
             this.gameIsOver = true
-            // window.alert("GAME OVER")
-        
-
+            this.gameScreen.style.display = "none";
+            this.gameEndScreen.style.display = "block"
+            this.buttonScore.style.display = "none"
         }
+
+        
     }
-
     
-
-
-
-
-
-
-    update() {
-        // CONTENIDO AQUI
+    finishWin() {
+        if (this.score >= 12) {
+            this.gameIsOver = true
+            this.gameScreen.style.display = "none";
+            this.messiWin.style.display = "block"
+            this.buttonScore.style.display = "none"
+            
+        }
+        
+        
     }
 }

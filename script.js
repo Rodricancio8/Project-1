@@ -1,8 +1,9 @@
 window.onload = function () {
   // DOM elements
   const startButton = document.getElementById("start-button");
-  const restartButton = document.getElementById("restart-button");
+  const restartButton = document.getElementsByClassName("restart-button");
   const gameScreen = document.getElementById("game-screen");
+  
 
   // Initialize game-related variables
   // Hold the current game instance
@@ -32,12 +33,13 @@ window.onload = function () {
       newPlayer.playerMove("right");
     }
   }
-
+setTimeout(()=>{
   setInterval(() => {
     new Obstacles(gameScreen, game)
     console.log(game)
-  }, 4000)
-  
+  }, 2000)
+
+}, 2000)
 
 
   // Add a keydown event listener to the window to capture keyboard input
@@ -49,7 +51,20 @@ window.onload = function () {
 
   })
 
-  
-
 
 }
+
+
+const resetButton = document.getElementById("restart-text")
+
+resetButton.addEventListener("click", function(event){
+if(resetButton){
+  location.reload();
+}
+});
+
+
+
+
+
+

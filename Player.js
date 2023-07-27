@@ -16,7 +16,7 @@ class Player {
   // New method to handle player movement within game boundaries
   playerMove(key) {
     // Set player's movement speed
-    const moveAmount = 50;
+    const moveAmount = 100;
     const gameWidth = this.gameScreen.offsetWidth;
     const playerWidth = this.playerElement.offsetWidth;
 

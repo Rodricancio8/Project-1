@@ -1,47 +1,97 @@
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+#imagen-fondo{
+  background-color: black;
+  width: 736px;
+  height: 837px;
+  display: block;
+  /* padding-left: 100px; */
+}
+
+html{
+  height: 100%;
+  width: 100%;
+}
+
 body {
   background-color: white;
-  width: 1500px;
+  /* max-width: 1200px; */
   margin: 0;
-  height: 100px;
+  height: 100%;
+  width: 100%;
   padding: 0;
   border: solid, blue;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   text-align: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+body main{
+  align-content: center;
+  text-align: center;
+  align-items: center;
 }
 
 #game-intro {
-  padding: 100px 0px;
   background-color: black;
-  border: 20px, brown, solid;
-  height: 1%
+  background-size: 20px;
+  /* border: 20px, solid, #333; */
+  z-index: 100;
+  padding: 0px;
+  margin: 30px;
+  height: 91%;
+  width: 500px;
+  border-bottom-left-radius: 13px;
+  border-bottom-right-radius: 13px;
+  border-top-right-radius: 13px;
+  border-top-left-radius: 13px;
+
 }
 
-#backgroundvegan {
-  background-image: url(/images/fondo\ vegan.jpg);
+#win-messi{
+  display: none;
+  height: 100vh;
+  width: 100vw;
+}
+
+#vegan-game{
   width: 500px;
   position: relative;
   border: solid;
   text-align: center;
+  border-radius: 15px;
+  border-bottom: solid;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius:0px;
 
 }
 
 .vegetables{
   position: absolute;
+  background-image: url(images/vegetables.png);
+  background-size: cover;
   top: 0;
   left: 50vw;
-  width: 50px;
-  height: 50px;
-  background-color: red;
+  width: 60px;
+  height: 60px;
 }
 
 
 .meat{
   position: absolute;
+  background-image: url(images/meat.png);
+  background-size: cover;
   top:0;
   left:0;
-  width: 50px;
-  height: 50px;
-  background-color: blue;
+  width: 60px;
+  height: 60px;
 }
 
 body button {
@@ -62,48 +112,38 @@ body button {
   margin: auto;
   text-align:unset;
   position: relative;
-  position: relative;
-  background-image: url(images/fondo1.webp);
+  background-image: url(images/fondo\ pasto.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 800px;
-  width: 1200px;
+  width: 90vw;
+  max-width: 80%;
   border: solid 20px, black;
-  /* overflow: hidden; */
+  overflow: hidden;
+  z-index: 1000;
 }
 
 #game-over{
 
-  /* padding: 10px 20px;
-  font-size: 18px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
   text-align: center;
-  background-color: #fff;
-  padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px; */
-  position: absolute;
-  text-align: center;
-  top: 750px;
-  right: 265px;
-  background-color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
+  background-image: url(images/fondo\ game\ over.webp);
+  padding: 19px 20px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   font-size: 14px;
   font-weight: bold;
+  display: none;
+  height: 100vh;
+  width: 100vw;
+
 
 }
 
 #player {
 
   position: absolute;
-  width: 120px;
-  height: 120px;
-  background-image: url(images/parri\ completa.png);
+  width: 110px;
+  height: 110px;
+  background-image: url(images/kisspng-barbecue-grill-vector-graphics-grilling-clip-art-png-5c09f90112c330.4312983315441574410769-removebg-preview.png);
   bottom: 0;
   left: 0;
   bottom: 0;
@@ -115,8 +155,8 @@ body button {
 
 .restart-button{
   position: absolute;
-  top: 500px;
-  right: 100px;
+  top: 50%;
+  right: 20%;
   background-color: #4CAF50;
   padding: 10px 20px;
   border-radius: 5px;
@@ -125,21 +165,24 @@ body button {
   color: white;
   font-size: 18px;
   font-weight: bold;
-  transition: background-color 0.2s;
 }
 
 
-.score-button {
+#score-button {
   position: absolute;
-  top: -350px;
+  top: 0;
+  left:0;
+  z-index: 1000;
   width: 200px;
-  right: -200px;
-  background-color: #4CAF50;
+  height: 60px;
+  /* right: 20%; */
+  /* background-color: #4CAF50; */
   padding: 3px 29px;
   border-radius: 5px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); */
   cursor: pointer;
   transition: background-color 0.2s;
+  display: none;
 }
 
 .score-button:hover {
@@ -151,11 +194,10 @@ body button {
   font-size: 16px;
   font-weight: bold;
   position: absolute;
-  top: 500px;
-  right: 50px;
+  /* top: 700px; */
   background-color: #4CAF50;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 8px 31px;
+  border-radius: 7px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   transition: background-color 0.2s;

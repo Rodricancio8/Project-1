@@ -57,7 +57,7 @@ class Obstacles {
     animateEnemies() {
 
 
-        let position = this.obstacle.offsetTop + 4;
+        let position = this.obstacle.offsetTop + 9;
         this.obstacle.style.top = position + "px";
 
 
@@ -76,18 +76,9 @@ class Obstacles {
 
         window.requestAnimationFrame(() => {
             this.animateScore()
-
+        
         })
     }
 
 
 }
-
-
-// }
-
-
-//   crear una funcion point values para luego sacar del score si quita o agrega score, usar condicional if
-//   pointvalues
-
-//   AGREGAR MEAT A LA FUNCION CREADA CON SET INTERVAL
