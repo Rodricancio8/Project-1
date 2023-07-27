@@ -5,17 +5,11 @@ class Obstacles {
         this.game = game
         this.width = this.gameScreen.offsetWidth;
 
-        // Create a new img element for obstacles
-        // this.element = document.createElement("img");
-        // this.element.width = 50;
-        // this.element.height = 50;
-        // this.element.className = "obstacle"
         this.createEnemy()
         this.createScore()
         this.animateEnemies()
         this.animateScore()
-        // let obstacle = []
-        // let score = null
+       
     }
 
 
@@ -59,9 +53,6 @@ class Obstacles {
 
         let position = this.obstacle.offsetTop + 9;
         this.obstacle.style.top = position + "px";
-
-
-        // console.log(this.obstacle.style.top)
 
         window.requestAnimationFrame(() => {
             this.animateEnemies()

@@ -20,7 +20,6 @@ html{
 
 body {
   background-color: white;
-  /* max-width: 1200px; */
   margin: 0;
   height: 100%;
   width: 100%;
@@ -42,7 +41,6 @@ body main{
 #game-intro {
   background-color: black;
   background-size: 20px;
-  /* border: 20px, solid, #333; */
   z-index: 100;
   padding: 0px;
   margin: 30px;
@@ -112,7 +110,7 @@ body button {
   margin: auto;
   text-align:unset;
   position: relative;
-  background-image: url(images/fondo\ pasto.jpeg);
+  background-image: url(images/mendoza\ viñedos.jpeg);
   background-size: cover;
   background-repeat: no-repeat;
   height: 800px;
@@ -121,6 +119,7 @@ body button {
   border: solid 20px, black;
   overflow: hidden;
   z-index: 1000;
+  border: 5px solid #000;
 }
 
 #game-over{
@@ -157,16 +156,40 @@ body button {
   position: absolute;
   top: 50%;
   right: 20%;
-  background-color: #4CAF50;
-  padding: 10px 20px;
-  border-radius: 5px;
+  background-color: #303F9F;
+  border:none;
+  padding: 12px 24px;
+  border-radius: 10px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  color: white;
   font-size: 18px;
   font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
+.restart-button:hover {
+  background-color: #C0C0C0;
+  transform: translateY(-2px);
+}
+
+/* Estilo al hacer clic */
+.restart-button:active {
+  background-color: #0e2e78;
+  transform: translateY(0);
+}
+
+/* Estilo futurista adicional */
+.restart-button::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 110%;
+  height: 110%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  z-index: -1;
+}
 
 #score-button {
   position: absolute;
@@ -175,11 +198,8 @@ body button {
   z-index: 1000;
   width: 200px;
   height: 60px;
-  /* right: 20%; */
-  /* background-color: #4CAF50; */
   padding: 3px 29px;
   border-radius: 5px;
-  /* box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3); */
   cursor: pointer;
   transition: background-color 0.2s;
   display: none;
@@ -194,7 +214,6 @@ body button {
   font-size: 16px;
   font-weight: bold;
   position: absolute;
-  /* top: 700px; */
   background-color: #4CAF50;
   padding: 8px 31px;
   border-radius: 7px;

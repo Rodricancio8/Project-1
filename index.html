@@ -4,52 +4,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
     <main>
-        <!-- <div id="imagen-fondo"> -->
+
         <div id="game-intro">
             <img id="vegan-game" src="./images/-VEGAN-GAME-26-7-2023.jpg" />
-
             <div id="backgroundvegan">
-
             </div>
-
             <img src="./images/messi asado.png" width="500" height="350" alt="messi asando" class="main-img" />
-
             <br>
             <br>
             <br>
-
             <button id="start-button">COOK</button>
             <br>
             <img id="arrows" src="./images/arrows.png" alt="" class="arrows-img" />
         </div>
-        <!-- </div> -->
+
 
         <div id="game-screen">
 
             <div id="player"></div>
-
+            <audio id="collision-sound">
+                <source src="audio/objects.mp3" type="audio/mpeg">
+            </audio>
             <br />
             <br />
             <br />
             <br />
+            <audio id="error-sound">
+                <source src="audio/negative_beeps-6008.mp3" type="audio/mpeg">
+            </audio>
         </div>
 
+
+        
         <div id="score-button">
             <div id="score-text">SCORE: 0</div>
         </div>
+
+
+
         <img id="win-messi" src="./images/argentina-fifa-world-cup-lionel-messi-hd-wallpaper-preview.jpg" />
 
         <div id="game-over">
 
 
             <div class="restart-button">
-                <div id="restart-text">Restart</div>
+                <div id="restart-text">RESTART</div>
             </div>
 
 

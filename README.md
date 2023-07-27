@@ -1,12 +1,12 @@
 
 
-# PROJECT 1 | !VEGAN GAME 
+# PROJECT 1 |
 
 
 
 ![game main](./images/main.png)
 
-## Enjoy your meat !!!
+## Enjoy your meat !
 
 ## Overview
 
@@ -33,11 +33,11 @@ The score will update as actions are executed, and players must strive to reach 
 
 - Click on the COOK button on the screen to start the game. Once started, the targets will automatically fall from the sky.
 
-Use the RIGHT ARROW key on the keyboard to move the player towards the right side until reaching the width of the screen.
+- Use the RIGHT ARROW key on the keyboard to move the player towards the right side until reaching the width of the screen.
 
-Use the RIGHT ARROW key to move the player towards the left side until reaching the width of the screen.
+- Use the RIGHT ARROW key to move the player towards the left side until reaching the width of the screen.
 
-Click on the RESTART button after losing the game to begin a new game.
+- Click on the RESTART button after losing the game to begin a new game.
 
 ## Development
 
@@ -47,9 +47,20 @@ Click on the RESTART button after losing the game to begin a new game.
 
 *.js (game, script, player, obstacles)*: 
 
-*game.js*: It contain main 
+*game.js*: This file contains the main functions that provide gameplay and interaction to the game, such as game loop, collision detection to make elements disappear and display of the differents screens
+
+*script.js*: Includes keydown event listeners to move the players and restart button. Additionally, it includes the creation of intervals to spawn new enemies and the function to initiate the game.
+
+*player.js*: This file contains functions related to the player, such as movement speed within the screen, alignment to the gameplay width, and player position adaptation.
+
+*obstacles.js*: It incorporates functions for creating new scores and enemies, as well as variables related to their appearance and drop.
 
 
+## Author
+
+Rodrigo Cancio Web Developer 
+
+![ironhack logo](./images/Ironhack-1.png)
 
 
 

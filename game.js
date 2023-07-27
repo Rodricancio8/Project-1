@@ -20,18 +20,20 @@ class Game {
         this.gameIsOver = false;
     }
 
+
+
     start() {
         // Hide the game intro and display the game screen
         this.messiWin.style.display = "none";
         this.gameIntro.style.display = "none";
         this.gameScreen.style.display = "block";
         this.buttonScore.style.display = "block";
-        // this.gameScreen.style.width = this.width
-        // this.gameScreen.style.height = this.height
 
         // Start the game loop
         this.gameLoop();
     }
+
+
     gameLoop() {
         // Check if the game is over; if so, stop the loop
         if (this.gameIsOver) {
@@ -42,6 +44,7 @@ class Game {
         this.finish()
         this.desappear()
         this.collissionDetectionForSquares()
+
         // Continue the game loop by requesting the next animation frame
         window.requestAnimationFrame(() => this.gameLoop());
         document.addEventListener("keydown", (event) => {
@@ -49,15 +52,15 @@ class Game {
         });
     }
 
+
+
+
     desappear() {
         this.obstacles.forEach((obstacle) => {
             if (obstacle.offsetTop > 800) {
                 obstacle.remove();
             }
         })
-
-
-
     }
 
     collissionDetectionForSquares() {
@@ -78,23 +81,31 @@ class Game {
                 playerPosition.y < obstaclePosition.y + obstaclePosition.height &&
                 playerPosition.y + playerPosition.height > obstaclePosition.y
             ) {
-                console.log('COLLISSION DETECTED');
+    
 
                 if (obstacle.className === "vegetables") {
-                    this.score -= 1
-                    this.scoreElement.textContent = `SCORE: ${this.score}`
+                    const errorSound = document.getElementById("error-sound");
+                    errorSound.currentTime = 0;
+                    errorSound.play();
+                    this.score -= 1;
+                    this.scoreElement.textContent = `SCORE: ${this.score}`;
+                
                 }
 
                 else if (obstacle.className === "meat") {
-                    this.score += 1
-                    this.scoreElement.textContent = `SCORE: ${this.score}`
-                    console.log(this.score)
+                    const collisionSound = document.getElementById("collision-sound");
+                    collisionSound.currentTime = 0;
+                    collisionSound.play();
+                    this.score += 1;
+                    this.scoreElement.textContent = `SCORE: ${this.score}`;
+                    console.log(this.score);
                 }
+            
+            
 
-
-                obstacle.remove()
-            }
-        });
+                    obstacle.remove()
+                }
+            });
 
     }
 
@@ -109,18 +120,18 @@ class Game {
             this.buttonScore.style.display = "none"
         }
 
-        
+
     }
-    
+
     finishWin() {
         if (this.score >= 12) {
             this.gameIsOver = true
             this.gameScreen.style.display = "none";
             this.messiWin.style.display = "block"
             this.buttonScore.style.display = "none"
-            
+
         }
-        
-        
+
+
     }
 }
