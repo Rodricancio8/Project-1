@@ -81,7 +81,7 @@ class Game {
                 playerPosition.y < obstaclePosition.y + obstaclePosition.height &&
                 playerPosition.y + playerPosition.height > obstaclePosition.y
             ) {
-    
+
 
                 if (obstacle.className === "vegetables") {
                     const errorSound = document.getElementById("error-sound");
@@ -89,7 +89,7 @@ class Game {
                     errorSound.play();
                     this.score -= 1;
                     this.scoreElement.textContent = `SCORE: ${this.score}`;
-                
+
                 }
 
                 else if (obstacle.className === "meat") {
@@ -100,12 +100,12 @@ class Game {
                     this.scoreElement.textContent = `SCORE: ${this.score}`;
                     console.log(this.score);
                 }
-            
-            
 
-                    obstacle.remove()
-                }
-            });
+
+
+                obstacle.remove()
+            }
+        });
 
     }
 

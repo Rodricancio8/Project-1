@@ -26,7 +26,9 @@ class Player {
       if (this.x < 0) {
         this.x = 0;
       }
-    } else if (key === "right") {
+    } 
+    
+    else if (key === "right") {
       this.x += moveAmount;
       // Ensure the player's x coordinate doesn't go beyond the game screen's width minus the player's width
       if (this.x > gameWidth - playerWidth) {
