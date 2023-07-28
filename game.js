@@ -124,7 +124,7 @@ class Game {
     }
 
     finishWin() {
-        if (this.score >= 12) {
+        if (this.score >= 6) {
             this.gameIsOver = true
             this.gameScreen.style.display = "none";
             this.messiWin.style.display = "block"
