@@ -169,13 +169,13 @@ body button {
   transform: translateY(-2px);
 }
 
-/* Estilo al hacer clic */
+
 .restart-button:active {
   background-color: #0e2e78;
   transform: translateY(0);
 }
 
-/* Estilo futurista adicional */
+
 .restart-button::before {
   content: "";
   position: absolute;
@@ -240,10 +240,19 @@ body button {
 }
 
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
 }
 
 
-@media (min-width: 992px) {
+@media (min-width: 769px) and (max-width: 1024px) {
+
+}
+
+
+@media (min-width: 1025px) {
 
 }
