@@ -46,8 +46,19 @@ body main {
   border-bottom-right-radius: 13px;
   border-top-right-radius: 13px;
   border-top-left-radius: 13px;
-  border: 80px, solid, orange
+  border: 80px, solid, orange;
+  position: relative;
+  text-align: center;
+  height: 95vh;
 
+}
+
+.arrows-img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  
 }
 
 #win-messi {
